@@ -25,13 +25,19 @@ jobs:
 
             # Install dependencies
             - name: Install dependencies
-              run: npm install
+              run: |
+                cd intro-to-github-actions
+                npm install
 
             # Run the Linter to chech for formatting issues
             - name: Run Linter
-              run: npx eslint . --ext .js
+              run: |
+                cd intro-to-github-actions
+                npx eslint . --ext .js
 
             # Run the tests
             - name: Run tests
-              run: npm test
+              run: |
+                cd intro-to-github-actions
+                npm test
             
