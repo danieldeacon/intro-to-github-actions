@@ -27,7 +27,9 @@ jobs:
 
             # Run the Linter to check for formatting issues
             - name: Run Linter
-              run: npx eslint . --ext .js
+              run: |
+                chmod +x ./node_modules/.bin/eslint
+                npx eslint . --ext .js
 
             # Run the tests
             - name: Run tests
